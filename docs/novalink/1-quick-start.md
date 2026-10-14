@@ -46,6 +46,8 @@ Your NOVALINK kit should come with the following items:
 
 - 2x SMA Male to SMA Male Cable
 
+NOTE: Kits shipped before November 2026 do not include SMA Male to SMA Male cables
+
 Transmitter Setup
 {: .fs-6 .fw-500 }
 
