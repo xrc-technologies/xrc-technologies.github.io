@@ -104,7 +104,7 @@ Insert the JR Bay Adapter into the radio controller. 2 top pins may need to be b
          alt="NOVALINK radio system"
          width="300">
 
-As of 10/14/2026, the 3D printed case is still under design. The 3D model for the JR Bay Adapter is available for download below:
+As of October 14, 2026, the 3D printed case is still under design. The 3D model for the JR Bay Adapter is available for download below:
 <div style="width: 100%; max-width: 800px; margin: 20px auto;">
   <model-viewer
     src="{{ '/assets/XRC_mLRS_jr_bay_adapter_v3.glb' | relative_url }}"
@@ -135,7 +135,7 @@ Attach the antenna to the transmitter module using the SMA male-male cable as so
          alt="NOVALINK radio system"
          width="200">
 
-CRITICAL: Do NOT power on the transmitter module without either and antenna or a >1W 50Ω RF load.
+CRITICAL: Do NOT power on the transmitter module without either an antenna or a >1W 50Ω RF load.
 
 Step 5
 {: .fs-5 .fw-500 }
@@ -245,7 +245,7 @@ Make the following connections:
 
 Any serial port practically can be used, but we use SERIAL1 for Mavlink and SERIAL2 for CRSF RC channels in this example.
 
-While the NOVALINK receiver can handle up to 6s voltages, it is **strongly** recommended to not exceed 12V or power below 7V to ensure proper RF power output. Please test and ensure stable operation of all RF equipment including thermal performance in aircraft before flying.
+While the NOVALINK receiver can handle up to 6s voltages, it is **strongly** recommended to not exceed 12V or operate below 7V to ensure proper RF power output. Please test and ensure stable operation of all RF equipment including thermal performance in aircraft before flying.
 
 Step 11
 {: .fs-5 .fw-500 }
@@ -312,7 +312,7 @@ RC channels should now respond under Radio Calibration:
 Step 13
 {: .fs-5 .fw-500 }
 
-The NOVALINK transmitter modules comes with a built-in wireless bridge. As of October 2026, this is ONLY compatible with WiFi and NOT Bluetooth.
+The NOVALINK transmitter module comes with a built-in wireless bridge. As of October 2026, this is ONLY compatible with WiFi and NOT Bluetooth.
 
 Upon power on, the transmitter module will create a WiFi hotspot with either the SSID ```XRC TECHNOLOGIES NOVALINK``` or something similar to ```mLRS-4983 AP UDP```
 
