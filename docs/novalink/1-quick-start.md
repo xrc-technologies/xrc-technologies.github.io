@@ -131,7 +131,7 @@ Step 4
 
 Attach the antenna to the transmitter module using the SMA male-male cable as so:
 
-<img src="{{ '/assets/images/novalink-5.jpg' | relative_url }}"
+<img src="{{ '/assets/images/novalink-50.png' | relative_url }}"
          alt="NOVALINK radio system"
          width="200">
 
@@ -221,7 +221,7 @@ CRITICAL: Ensure USB-PWR and CAN-5V are open.
 
 Connect the IPEX connector to the SMA connector, then to the antenna.
 
-<img src="{{ '/assets/images/novalink-14.jpg' | relative_url }}"
+<img src="{{ '/assets/images/novalink-51.png' | relative_url }}"
          alt="NOVALINK radio system"
          width="200">
 

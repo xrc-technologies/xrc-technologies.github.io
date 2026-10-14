@@ -19,7 +19,7 @@ Ranges of **100km+** on 433MHz are standard with full Mavlink + CRSF.
   <a href="https://xrctechnologies.com/"
      target="_blank"
      rel="noopener noreferrer">
-    <img src="{{ '/assets/images/novalink-1.jpg' | relative_url }}"
+    <img src="{{ '/assets/images/novalink-49.png' | relative_url }}"
          alt="NOVALINK radio system"
          width="500">
   </a>
