@@ -97,7 +97,7 @@ Below is an overview of the transmitter module interface:
          alt="NOVALINK radio system"
          width="500">
 
-Insert the JR Bay Adapter into the radio controller. 2 top pins may need to be bent depending on the JR Bay Adapter version:
+Insert the JR Bay Adapter into the radio controller. It is recommended to use the JR Bay Adapter Enclosure. 2 top pins may need to be bent depending on the JR Bay Adapter version:
 
 <img src="{{ '/assets/images/novalink-10.png' | relative_url }}"
          alt="NOVALINK radio system"
@@ -106,7 +106,62 @@ Insert the JR Bay Adapter into the radio controller. 2 top pins may need to be b
          alt="NOVALINK radio system"
          width="300">
 
-As of October 14, 2026, the 3D printed case is still under design. The 3D model for the JR Bay Adapter is available for download below:
+Use of recommended enclosure:
+
+<img src="{{ '/assets/images/novalink-52.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="300">
+
+The 3D printed files for the JR Bay enclosure may be found below. Please ensure that the enclosure snaps fully into the JR bay, otherwise it may fall out.
+
+Print Settings:
+
+- PETG
+
+- 0.2mm Layer Height
+
+- 50mm/s Speed
+
+- Support Only On Build Plate (Base)
+
+Version 1:
+
+- 7x M2x5mm Screws
+
+<div style="width: 100%; max-width: 800px; margin: 20px auto;">
+  <model-viewer
+    src="{{ '/assets/jrbay-base-v1.glb' | relative_url }}"
+    alt="NOVALINK 3D model"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="width: 100%; height: 450px; background: #3a3a3a; border-radius: 12px;">
+  </model-viewer>
+
+  <p>
+    <a href="{{ '/assets/jrbay-base-v1.obj' | relative_url }}" download>
+      Download JR Bay Adapter Enclosure Base 3D Model
+    </a>
+  </p>
+</div>
+<div style="width: 100%; max-width: 800px; margin: 20px auto;">
+  <model-viewer
+    src="{{ '/assets/jrbay-top-v1.glb' | relative_url }}"
+    alt="NOVALINK 3D model"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="width: 100%; height: 450px; background: #3a3a3a; border-radius: 12px;">
+  </model-viewer>
+
+  <p>
+    <a href="{{ '/assets/jrbay-top-v1.obj' | relative_url }}" download>
+      Download JR Bay Adapter Enclosure Lid 3D Model
+    </a>
+  </p>
+</div>
+
+The 3D model for the JR Bay Adapter is available for download below:
 <div style="width: 100%; max-width: 800px; margin: 20px auto;">
   <model-viewer
     src="{{ '/assets/XRC_mLRS_jr_bay_adapter_v3.glb' | relative_url }}"
@@ -114,12 +169,12 @@ As of October 14, 2026, the 3D printed case is still under design. The 3D model 
     camera-controls
     auto-rotate
     shadow-intensity="1"
-    style="width: 100%; height: 450px; background: #f2f4f7; border-radius: 12px;">
+    style="width: 100%; height: 450px; background: #3a3a3a; border-radius: 12px;">
   </model-viewer>
 
   <p>
     <a href="{{ '/assets/XRC_mLRS_jr_bay_adapter_v3.step' | relative_url }}" download>
-      Download STEP file
+      Download JR Bay Adater 3D Model
     </a>
   </p>
 </div>
