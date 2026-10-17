@@ -284,7 +284,7 @@ Connect the IPEX connector to the SMA connector, then to the antenna.
 
 There are many ways to do this. A direct solder connection from IPEX to antenna would be ideal to reduce impedance mismatches and RF losses.
 
-However, it is up to the end-user to determine what works best. Please treat the IPEX connector with care, as it is fragile.
+However, the options here are flexible and different setups may be used depending on the end-user. Please treat the IPEX connector with care, as it is fragile.
 
 Step 10
 {: .fs-5 .fw-500 }
