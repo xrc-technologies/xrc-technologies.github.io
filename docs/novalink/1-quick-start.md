@@ -88,6 +88,12 @@ CRITICAL: If you have purchased a NOVALINK kit before November 2026, please doub
          alt="NOVALINK radio system"
          width="300">
 
+CRITICAL: To check solder pad location and access transmitter module PCB, only top 2 screws on each side need to be removed.
+
+<img src="{{ '/assets/images/novalink-53.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="500">
+
 The transmitter module will connect to the radio controller via the ethernet cable. No other power cables are needed.
 
 NOVALINK was designed in such a way as to optimize RF performance. Many commercial radio controllers emit radiated electrical noise, so having at least a meter of separation greatly enhances RF performance and sensitivity, often doubling or tripling the effective range in certain circumstances!
