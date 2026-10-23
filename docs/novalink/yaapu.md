@@ -4,165 +4,46 @@ parent: NOVALINK
 nav_order: 6
 ---
 
-# Callouts
+# Yaapu Telemetry Script
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+The Yaapu Telemetry Script is a powerful tool to allow live aircraft telemetry statistics to be displayed as a page on a radio transmitter.
 
+This guide is meant as a quick-start to using the Yaapu Telemetry Widge with the NOVALINK mLRS Radio System. It is not an exhaustive guide, and more details specific to mLRS may be found <a href="https://github.com/olliw42/mLRS-docu/blob/main/docs/CRSF.md" target="_blank" rel="noopener noreferrer">HERE</a>.
 
+There are a few assumptions in this guide:
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+- NOVALINK mLRS system has been bound and connected.
 
-## An untitled callout
-{: .no_toc .text-delta }
+- Ardupilot flight controller with CRSF and Mavlink working.
 
-```markdown
-{: .highlight }
-A paragraph
-```
+- Radio controller compatible with Yaapu Telemetry Script. Check radio compatability <a href="https://github.com/yaapu/FrskyTelemetryScript/wiki/Supported-radios" target="_blank" rel="noopener noreferrer">HERE</a>.
 
-{: .highlight }
-A paragraph
+Installation
+{: .fs-6 .fw-500 }
 
+Download and install the widget <a href="https://github.com/yaapu/frskytelemetryscript" target="_blank" rel="noopener noreferrer">HERE</a>.
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+Under `Model` -> `External RF`, check that protocol is set to `CRSF` and baud to `400k`.
 
-```markdown
-{: .note }
-A paragraph
-```
+<img src="{{ '/assets/images/novalink-62.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .note }
-A paragraph
+Open the Yaapu Telemetry Configurator and select `enable CRSF Support` = `yes`
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+<img src="{{ '/assets/images/novalink-63.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+<img src="{{ '/assets/images/novalink-64.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-## A multi-paragraph callout
-{: .no_toc .text-delta }
+Yaapu Telemetry Widget should now be working. Please ensure that the widge view has been added as a view in EdgeTX.
 
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+<img src="{{ '/assets/images/novalink-61.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>.

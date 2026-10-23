@@ -4,165 +4,75 @@ parent: NOVALINK
 nav_order: 19
 ---
 
-# Callouts
+# RF Tips and Tricks
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+- NOTE: MAKE THIS INTO A MULTI-SECTION SUB-PAGE
+
+- This is not an RF textbook or course. It's meant to be a practical hobbyst guide to RC aircraft RF systems. By careful attention and proper application of the following literature, you are almost certainly guaranteed to get well over 100km range out of your NOVALINK mLRS radio system.
+
+- There will be no advanced electrical engineering math needed beyond basic logarithms and elementary mathematics principles.
 
 
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
 
-## An untitled callout
-{: .no_toc .text-delta }
+- RSSI vs LQ and what each means practically
 
-```markdown
-{: .highlight }
-A paragraph
-```
+- Separation from radio controller (radiated emissions, emi etc)
 
-{: .highlight }
-A paragraph
+- Importance of antennas and antenna placement
 
+- Using a VNA to test antennas
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+- Basic smith chart usage
 
-```markdown
-{: .note }
-A paragraph
-```
+- Different types of antennas
 
-{: .note }
-A paragraph
+- db gain explained, dbi etc
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+- RF power explained db vs dbm vs watt
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+- Link budget explained
 
-## A multi-paragraph callout
-{: .no_toc .text-delta }
+- Antenna setup - faraday cages, installing in aircraft and putting in RF noise-free environment
 
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+- Using a spectrum analyzer, important of the FFT and looking in the frequency domain
 
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+- The best way to test your antenna is on your aircraft with everything installed
 
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+- RF line of sight calculations
 
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+- Fresnel zone
 
-## An indented callout
-{: .no_toc .text-delta }
+- Curvature of the earth
 
-```markdown
-> {: .highlight }
-  A paragraph
-```
+- Flying over water
 
-> {: .highlight }
-  A paragraph
+- Flying through rain, air, space, fog
 
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
+- Meaning of free space
 
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
+- Obstacles and urban environments
 
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
+- Multipathing
 
+- The ideal setup that will 100% get you 100km
 
-## Nested callouts
-{: .no_toc .text-delta }
+- Calculating RF range given link budget, data rate
 
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
+- General principles of RF physics. Data rate vs range vs frequency vs bandwidth, etc
 
-{: .important }
-> {: .warning }
-> A paragraph
+- LoRa settings, SF, coding rate, bandwidth, what NOVALINK uses and what this means vs ELRS, etc
 
-## Opaque background
-{: .no_toc .text-delta }
+- Why ELRS will get better range usually and the compromises. Why mLRS is better for mavlink vs ELRS mavlink
 
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
+- How to design an antenna
 
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+- Additional resources for RF topics
+
+- Getting your ham radio license
+
+- RF textbooks and reading for advanced topics
+
+- The practical truth of why NOVALINK works - because it uses the right chipset and no other mLRS system uses the correct chipset.
+

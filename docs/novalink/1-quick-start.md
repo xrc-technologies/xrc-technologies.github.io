@@ -79,7 +79,7 @@ Place the ```mLRS.lua``` in the ```/SCRIPTS/TOOLS``` folder of your radio's file
 
 Step 3
 {: .fs-5 .fw-500 }
-
+s
 Please ensure that the radio controller is powered off for this part.
 
 CRITICAL: If you have purchased a NOVALINK kit before November 2026, please double-check that the USB power enable jumper is OPEN. Otherwise, if 2s power is applied from the radio controller and the USB port is plugged into a computer, there may be damage to the radio, the computer, or both:
@@ -377,6 +377,14 @@ Step 13
 
 The NOVALINK transmitter module comes with a built-in wireless bridge. As of October 2026, this is ONLY compatible with WiFi and NOT Bluetooth.
 
+First, configure the Transmitter module as follows (via LUA):
+
+<img src="{{ '/assets/images/novalink-38.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
+
+The WiFi LEDD should start blinking.
+
 Upon power on, the transmitter module will create a WiFi hotspot with either the SSID ```XRC TECHNOLOGIES NOVALINK``` or something similar to ```mLRS-4983 AP UDP```
 
 Connect to this WiFi network. By default there is no password:
@@ -423,4 +431,4 @@ As long as there is reasonable airflow over the receiver and input voltage is li
 
 Continue reading the documentation for additional setup options and advanced topics.
 
-Please refer to the <a href="https://github.com/olliw42/mLRS-docu/blob/main/README.md" target="_blank" rel="noopener noreferrer">official mLRS Documentation</a> for topics beyond the scope of NOVALINK
+Please refer to the <a href="https://github.com/olliw42/mLRS-docu/blob/main/README.md" target="_blank" rel="noopener noreferrer">official mLRS Documentation</a> for topics beyond the scope of NOVALINK.

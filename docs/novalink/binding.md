@@ -4,163 +4,31 @@ parent: NOVALINK
 nav_order: 2
 ---
 
-# Callouts
+# Binding
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+To bind the NOVALINK radio system, there are multiple ways to do this:
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+Transmitter Module:
 
-## An untitled callout
-{: .no_toc .text-delta }
+- Press the Bind/DFU button while powered on for ~4 seconds or until the Ethernet Port LEDs start an alternating blinking pattern.
+ 
+- Enter bind mode with 'bind' CLI command.
 
-```markdown
-{: .highlight }
-A paragraph
-```
+- Enter bind mode with LUA script.
 
-{: .highlight }
-A paragraph
+<img src="{{ '/assets/images/novalink-6.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
 
+Receiver:
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+- Press the Bind/DFU button while powered on for ~4 seconds or until the LEDs start an alternating blinking pattern.
 
-```markdown
-{: .note }
-A paragraph
-```
+- Power cycle the receiver quickly 3 times (wait for power LED to blink 3 times). Upon 4th power-up, the receiver will enter bind mode.
 
-{: .note }
-A paragraph
+<img src="{{ '/assets/images/novalink-16.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
-
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-
-## A multi-paragraph callout
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>

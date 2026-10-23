@@ -4,164 +4,56 @@ parent: NOVALINK
 nav_order: 7
 ---
 
-# Callouts
+# Wireless Bridge
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+NOVALINK supports an onboard Wireless Bridge out of the box. By default, this is an ESP32-C3 configured for UDP mode.
 
+Enable
+{: .fs-6 .fw-500 }
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+To use, please configure the Transmitter module as follows:
 
-## An untitled callout
-{: .no_toc .text-delta }
+<img src="{{ '/assets/images/novalink-38.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-```markdown
-{: .highlight }
-A paragraph
-```
+Upon power on, the transmitter module will create a WiFi hotspot with either the SSID ```XRC TECHNOLOGIES NOVALINK``` or something similar to ```mLRS-4983 AP UDP```
 
-{: .highlight }
-A paragraph
+Connect to this WiFi network. By default there is no password:
 
+<img src="{{ '/assets/images/novalink-44.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="300">
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+In Mission Planner, change connection settings to:
 
-```markdown
-{: .note }
-A paragraph
-```
+- UDP
 
-{: .note }
-A paragraph
+- 115200 Baud Rate
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+<img src="{{ '/assets/images/novalink-45.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+Press ```Connect```
 
-## A multi-paragraph callout
-{: .no_toc .text-delta }
+When it asks for Local port, enter ```14550``` then click OK
 
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+<img src="{{ '/assets/images/novalink-46.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="800">
 
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+Params should now start loading via Mavlink. To test, try rotating the flight controller to see attitude change in HUD:
 
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+<img src="{{ '/assets/images/novalink-47.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="800">
 
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+At 433MHz, the params will load slower than on a higher frequency. However, it should only take a minute or two before all params have loaded.
 
-## An indented callout
-{: .no_toc .text-delta }
+<img src="{{ '/assets/images/novalink-48.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="300">
 
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>.

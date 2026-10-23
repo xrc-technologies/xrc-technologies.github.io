@@ -4,165 +4,36 @@ parent: NOVALINK
 nav_order: 8
 ---
 
-# Callouts
+# Logging
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+There are many ways to log flight data. One convenient option will be presented in this guide, but please refer to the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a> for additional Logging options.
 
+There is an excellent <a href="https://oscarliang.com/log-telemetry/" target="_blank" rel="noopener noreferrer">guide by OscarLiang</a> avaiable for further info.
 
+Setup (TX16s Example)
+{: .fs-6 .fw-500 }
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+In EdgeTX, navigate to `Model` -> `Special Functions`.
 
-## An untitled callout
-{: .no_toc .text-delta }
+Add a special function called `SD Logs` and set it to a switch.
 
-```markdown
-{: .highlight }
-A paragraph
-```
+<img src="{{ '/assets/images/novalink-65.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .highlight }
-A paragraph
+<img src="{{ '/assets/images/novalink-66.bmp' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
+Enable this setting and set the `Interval` value to 1.0
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+Telemetry will be recorded every 1 second. This parameter may be changed but please note that for long flights, this will consume much data.
 
-```markdown
-{: .note }
-A paragraph
-```
+Now simply activate the switch and the radio controller will start logging telemetry data.
 
-{: .note }
-A paragraph
+The data will be saved as a `.csv` file under `LOGS` in the radio controller's filesystem.
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+This data may be processed a number of ways with Python, Excel, Libreoffice Calc, or any other data analytics software.
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-
-## A multi-paragraph callout
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+A good online option may be found <a href="https://maxbl4.github.io/otx/index.html" target="_blank" rel="noopener noreferrer">HERE</a>

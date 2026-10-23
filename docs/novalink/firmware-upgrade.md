@@ -4,165 +4,57 @@ parent: NOVALINK
 nav_order: 3
 ---
 
-# Callouts
+# Firmware Upgrade
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+There are three options for firmware upgrade:
 
+Web Flasher
+{: .fs-6 .fw-500 }
 
+This is the recommended firmware upgrade method.
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+Web-flasher support will arrive soon. Please visit <a href="https://olliw.eu/mlrs/flash/" target="_blank" rel="noopener noreferrer">mLRS Web Flasher</a> to upgrade firmware when it becomes available (November 2026).
 
-## An untitled callout
-{: .no_toc .text-delta }
+DFU
+{: .fs-6 .fw-500 }
 
-```markdown
-{: .highlight }
-A paragraph
-```
+Hold down Bind/DFU button while powering ON Transmitter/Receiver module.
 
-{: .highlight }
-A paragraph
+Use STM32CubeProgrammer to upload .hex file.
 
+Reboot.
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+ST-Link
+{: .fs-6 .fw-500 }
 
-```markdown
-{: .note }
-A paragraph
-```
+Use STM32CubeProgrammer to upload .hex file.
 
-{: .note }
-A paragraph
+Receiver SWD pad location:
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+<img src="{{ '/assets/images/novalink-54.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+Transmitter SWD pad location:
 
-## A multi-paragraph callout
-{: .no_toc .text-delta }
+<img src="{{ '/assets/images/novalink-55.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
 
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+Wireless Bridge Firmware Update
+{: .fs-6 .fw-500 }
 
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+Under some circumstances, it may be necessary to upgrade firmware of the Wireless Bridge.
 
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+Under most cases, users should use thge Web Flasher.
 
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
+However, it is possible to use the USB port as a serial passthrough to flash the onboard ESP32 manually.
 
-## An indented callout
-{: .no_toc .text-delta }
+With CLI mode enabled, type `espboot;` on the Transmitter module. LEDs should flash quickly.
 
-```markdown
-> {: .highlight }
-  A paragraph
-```
+You may now flash the ESP32 normally using `esptool` and the CLI serial port. ESP32 version is `ESC32C3`.
 
-> {: .highlight }
-  A paragraph
+More details <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32c3/esptool/flashing-firmware.html" target="_blank" rel="noopener noreferrer">HERE</a>.
 
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>.
