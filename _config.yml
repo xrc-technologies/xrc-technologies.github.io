@@ -16,7 +16,7 @@
 title: XRC Technologies Documentation
 description: XRC Technologies Documentation
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://xrc-technologies.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://docs.xrctechnologies.com" # the base hostname & protocol for your site, e.g. http://example.com
 repository: xrc-technologies/xrc-technologies.github.io # for github-metadata
 
 permalink: pretty
