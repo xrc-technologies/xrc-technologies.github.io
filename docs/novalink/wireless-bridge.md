@@ -1,6 +1,6 @@
 ---
 title: Wireless Bridge
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 7
 ---
 
@@ -12,7 +12,7 @@ NOVALINK supports an onboard Wireless Bridge out of the box. By default, this is
 Enable
 {: .fs-6 .fw-500 }
 
-To use, please configure the Transmitter module as follows:
+To use, please configure the Transmitter module as follows (Ignore `Power` setting):
 
 <img src="{{ '/assets/images/novalink-38.png' | relative_url }}"
          alt="NOVALINK radio system"

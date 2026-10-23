@@ -1,6 +1,6 @@
 ---
 title: Yaapu Telemetry App
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 6
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 1
 ---
 
@@ -94,7 +94,7 @@ CRITICAL: To check solder pad location and access transmitter module PCB, only t
          alt="NOVALINK radio system"
          width="500">
 
-The transmitter module will connect to the radio controller via the ethernet cable. No other power cables are needed.
+The transmitter module will connect to the radio controller via the ethernet cable. No other power cables are needed. **NOVALINK is compatible with BOTH standard and crossover-type Ethernet cables.**
 
 NOVALINK was designed in such a way as to optimize RF performance. Many commercial radio controllers emit radiated electrical noise, so having at least a meter of separation greatly enhances RF performance and sensitivity, often doubling or tripling the effective range in certain circumstances!
 

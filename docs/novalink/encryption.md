@@ -1,168 +1,47 @@
 ---
 title: Encryption
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 15
 ---
 
-# Callouts
+# Encryption
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+NOVALINK supports encryption out-of-the-box.
 
+The activate, simply configure the following `Privacy` parameter and select the level desired:
 
+<img src="{{ '/assets/images/novalink-73.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="700">
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+There are 3 levels of privacy:
 
-## An untitled callout
-{: .no_toc .text-delta }
+| | encryption<br>nonce size | authentication<br>MAC size | serial data rate<br>reduction | secured<br>data | comment |
+| --- | --- | --- | --- | --- | --- |
+| level 1 | 3 bytes / 24 bits | --- | -3 bytes<br>-4.7% uplink / -3.7% downlink | serial data | only encryption |
+| level 2 | 3 bytes / 24 bits | 3 bytes / 24 bits | -6 bytes<br>-9.4% uplink / -7.3% downlink | header + RC + serial data | encryp. + auth. |
+| level 3 | 4 bytes / 32 bits | 8 bytes / 64 bits | -12 bytes<br>-18.8% uplink / -14.6% downlink | header + RC + serial data | encryp. + auth. |
 
-```markdown
-{: .highlight }
-A paragraph
-```
+NOTE: A new binding must be performed at least once before the privacy features can be used. This is necessary because the Tx module and receiver must obtain the information required to generate the secret keys
 
-{: .highlight }
-A paragraph
+NOTE: For Privacy levels 2 and 3, Both the Tx module and receiver must be started from a powered-off state. Either device may be powered on first; no specific startup sequence is required. Once a connection has been established, repowering either device will result in a loss of connection.
 
+Technical Details
+{: .fs-6 .fw-500 }
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+From the <a href="https://github.com/olliw42/mLRS-docu/blob/main/docs/PRIVACY.md" target="_blank" rel="noopener noreferrer">mLRS Official Documentation for Privacy Mode</a>:
 
-```markdown
-{: .note }
-A paragraph
-```
+ChaCha20-Poly1305 uses a key, a nonce, and a message authentication code (MAC). The key must remain secret, whereas the nonce and MAC are public. In mLRS, the nonce and MAC are transmitted with each frame (reducing the usable serial payload). The nonce is incremented for each frame. Since a nonce must never be reused with the same key, the size of the nonce limits the maximum duration of a session. In 50 Hz mode, a 3-byte nonce implies a maximum runtime of 2^24 / 50 sec or 3.9 days; a 4-byte nonce provides a runtime of 2.7 years.
 
-{: .note }
-A paragraph
+The key used in a session is 32 bytes/256 bits in size and is constructed as follows:
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+Upon binding, a 32-byte key (static key) is constructed from the bind phrase, the hardware UIDs of the Tx module and the receiver, and a 64-bit random number. This makes the static key specific to the user's configuration and particular pair of devices. Furthermore, each binding process results in a new static key. Importantly, because the material used for constructing the static key is exchanged during binding in plain text, the binding process must be performed in a secure environment. If there is any suspicion that the static key has been compromised, a new binding should be performed.
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
+The actual key used in the communication - the session key - is created after power-up, when the Tx module and receiver establish their first connection. Another, fresh 64-bit random number - the session random number - is exchanged between the Tx module and receiver and protected using the static key and a 12-byte random nonce. The session random number is then used with the material established before during binding (bind phrase, Tx module and receiver UIDs, 64-bit random number) to derive the 256-bit session key. Consequently, each session uses a fresh secret key.
 
-## A multi-paragraph callout
-{: .no_toc .text-delta }
+Therefore, a new binding is not needed for each session. Since the exchange of the session random number is secured with the static key and is only exchanged at first connection after power up, it can usually be considered secure. However, again, if there is any suspicion that the static key has been compromised, a new binding should be performed.
 
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
+The random numbers are obtained from a hardware TRNG. Not all Tx modules contain a TRNG, and some are lacking in performance; these devices therefore do not support the privacy features (currently these are those with a STM32F103, STM32WLE or EPS8266 processor).
 
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+mLRS uses the <a href="https://monocypher.org/" target="_blank" rel="noopener noreferrer">Monocypher cryptographic library</a>.

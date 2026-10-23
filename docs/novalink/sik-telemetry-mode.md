@@ -1,168 +1,42 @@
 ---
 title: SiK Telemetry Mode
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 11
 ---
 
-# Callouts
+# SiK Telemetry Mode
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+NOVALINK can be used as a drop-in replacement for the popular SiK Telemetry Radio.
 
+To setup, simply use the Transmitter and Receiver MAVLink protocol ONLY and disregard CRSF RC channels.
 
+<img src="{{ '/assets/images/novalink-68.jpg' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="700">
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+Ensure Transmitter `Ser Port` = `com` and `Snd RadioStat` = `1 Hz`
 
-## An untitled callout
-{: .no_toc .text-delta }
+<img src="{{ '/assets/images/novalink-70.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="700">
 
-```markdown
-{: .highlight }
-A paragraph
-```
+Ensure Receiver `Ser Baudrate` = `your flight controller's baudrate setting` and `Snd RcChannel` = `off`
 
-{: .highlight }
-A paragraph
+<img src="{{ '/assets/images/novalink-69.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="700">
 
+Simply connect the TX1 and RX1 pads of the Receiver to the MAVLink serial prot on the flight controller.
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+Please ensure `SERIALx_PROTOCOL = 2` (Do not use MAVLink 1) and `SERIALx_BAUD` to match the receiver's baudrate setting as configured above.
 
-```markdown
-{: .note }
-A paragraph
-```
+Then, connect the Transmitter via the USB cable to the computer to be used as the ground station telemetry radio.
 
-{: .note }
-A paragraph
+Alternatively, if the wireless bridge is used for MAVLink instead of the USB cable, configure the Transmitter as follows:
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+<img src="{{ '/assets/images/novalink-71.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="700">
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-
-## A multi-paragraph callout
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>.

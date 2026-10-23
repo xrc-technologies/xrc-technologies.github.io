@@ -1,5 +1,5 @@
 ---
-title: NOVALINK
+title: NOVALINK mLRS Radio System
 nav_order: 2
 ---
 

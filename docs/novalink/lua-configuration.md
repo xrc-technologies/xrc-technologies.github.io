@@ -1,6 +1,6 @@
 ---
 title: Configuration (LUA)
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 4
 ---
 

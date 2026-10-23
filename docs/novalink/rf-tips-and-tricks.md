@@ -1,6 +1,6 @@
 ---
 title: RF Tips and Tricks
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 19
 ---
 
@@ -22,7 +22,7 @@ nav_order: 19
 
 - Importance of antennas and antenna placement
 
-- Using a VNA to test antennas
+- Using a VNA to test antennas - calibrate VNA
 
 - Basic smith chart usage
 
@@ -56,6 +56,16 @@ nav_order: 19
 
 - Multipathing
 
+- Measuring RF power with an oscilloscope
+
+- RF test setup tools
+
+- How to design an RF power amplifier
+
+- Basic principles of an RF front end
+
+- Separate vs combined Tx and Rx antennas
+
 - The ideal setup that will 100% get you 100km
 
 - Calculating RF range given link budget, data rate
@@ -76,3 +86,4 @@ nav_order: 19
 
 - The practical truth of why NOVALINK works - because it uses the right chipset and no other mLRS system uses the correct chipset.
 
+- Long-range challenge: If you hit 100km or more with NOVALINK, we will give you a 50% off discount code for any complete NOVALINK kit. You will be featured on our website. And added to the Long-range leaderboard hall of fame. And get a special surprise in the box when you claim your discount.

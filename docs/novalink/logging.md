@@ -1,6 +1,6 @@
 ---
 title: Logging
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 8
 ---
 

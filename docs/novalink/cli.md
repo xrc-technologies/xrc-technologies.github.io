@@ -1,6 +1,6 @@
 ---
 title: Configuration (CLI)
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 5
 ---
 

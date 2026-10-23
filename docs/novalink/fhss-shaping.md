@@ -1,168 +1,39 @@
 ---
 title: FHSS Shaping
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 16
 ---
 
-# Callouts
+# FHSS Shaping
 {: .d-inline-block }
 
-New (v0.4.0)
-{: .label .label-green }
+Frequency Hopping Spread Spectrum allows the Transmitter and Receiver to hop very quickly between frequencies.
 
+The enables a variety of improvements such as:
 
+- Better resistance to interference
 
-```yml
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
-```
+- Higher reliability
 
-## An untitled callout
-{: .no_toc .text-delta }
+- Better performance with multiple pilots
 
-```markdown
-{: .highlight }
-A paragraph
-```
+FHSS **is not** encryption, but it primarily used to enhance the practical performance of a radio system.
 
-{: .highlight }
-A paragraph
+NOVALINK supports FHSS on the `70 cm HAM` band through the `Ortho` parameter.
 
+The `bind phrase` mechanism minimizes interference between different mLRS systems operating in the same RF band. However, the possibility of mutual interference is not eliminated since the set of frequencies generated from different bind phrases can overlap. The `ortho` mechanism modifies the set of frequencies generated from a bind phrase into three further sets which are guaranteed to be strictly different (hence the term orthogonal). This allows for up to three mLRS systems to stay out of each others way.
 
-## A single paragraph callout
-{: .no_toc .text-delta }
+To activate, set band to `70 cm HAM` and change the `Ortho` setting.
 
-```markdown
-{: .note }
-A paragraph
-```
+<img src="{{ '/assets/images/novalink-74.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="600">
 
-{: .note }
-A paragraph
+- `off`: normal behavior
+- `1/3`: the 1st out of the three available frequency sets is used
+- `2/3`: the 2nd out of the three available frequency sets is used
+- `3/3`: the 3rd out of the three available frequency sets is used
 
-```markdown
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-```
+In order to use the `ortho` mechanism, mLRS systems need to be configured with the same bind phrase, but use different settings for the `Ortho` parameter. `Ortho` should not be set to `off` for any of them.
 
-{: .note-title }
-> My note title
->
-> A paragraph with a custom title callout
-
-## A multi-paragraph callout
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important }
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-```markdown
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-```
-
-{: .important-title }
-> My important title
->
-> A paragraph
->
-> Another paragraph
->
-> The last paragraph
-
-## An indented callout
-{: .no_toc .text-delta }
-
-```markdown
-> {: .highlight }
-  A paragraph
-```
-
-> {: .highlight }
-  A paragraph
-
-## Indented multi-paragraph callouts
-{: .no_toc .text-delta }
-
-```markdown
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-```
-
-> {: .new }
-> > A paragraph
-> >
-> > Another paragraph
-> >
-> > The last paragraph
-
-
-## Nested callouts
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .warning }
-> A paragraph
-```
-
-{: .important }
-> {: .warning }
-> A paragraph
-
-## Opaque background
-{: .no_toc .text-delta }
-
-```markdown
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
-```
-
-{: .important }
-> {: .opaque }
-> <div markdown="block">
-> {: .warning }
-> A paragraph
-> </div>
+For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/blob/main/docs/FHSS_SHAPING.md" target="_blank" rel="noopener noreferrer">mLRS Official Documentation for FHSS Shaping</a>.

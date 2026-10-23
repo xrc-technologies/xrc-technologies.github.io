@@ -1,6 +1,6 @@
 ---
 title: Additional Ardupilot Setup
-parent: NOVALINK
+parent: NOVALINK mLRS Radio System
 nav_order: 9
 ---
 
