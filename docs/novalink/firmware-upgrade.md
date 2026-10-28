@@ -34,27 +34,55 @@ Receiver SWD pad location:
 
 <img src="{{ '/assets/images/novalink-54.png' | relative_url }}"
          alt="NOVALINK radio system"
-         width="1000">
+         width="300">
 
 Transmitter SWD pad location:
 
 <img src="{{ '/assets/images/novalink-55.png' | relative_url }}"
          alt="NOVALINK radio system"
-         width="1000">
+         width="300">
 
 Wireless Bridge Firmware Update
 {: .fs-6 .fw-500 }
 
 Under some circumstances, it may be necessary to upgrade firmware of the Wireless Bridge.
 
-Under most cases, users should use thge Web Flasher.
+It is recommended to flash using `esptool` in USB passthrough mode.
 
-However, it is possible to use the USB port as a serial passthrough to flash the onboard ESP32 manually.
+Connect the NOVALINK Transmitter module via USB while powered on and set the USB mode to `serial` - CLI mode. Also set `Ser Port2` to `wbridge` to enable the wireless bridge after flashing.
 
-With CLI mode enabled, type `espboot;` on the Transmitter module. LEDs should flash quickly.
+<img src="{{ '/assets/images/novalink-71.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
 
-You may now flash the ESP32 normally using `esptool` and the CLI serial port. ESP32 version is `ESC32C3`.
+With CLI mode enabled, type `espboot;` in the serial console. LEDs should flash quickly.
 
-More details <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32c3/esptool/flashing-firmware.html" target="_blank" rel="noopener noreferrer">HERE</a>.
+<img src="{{ '/assets/images/novalink-76.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="500">
 
-For more details, please visit the <a href="https://github.com/olliw42/mLRS-docu/tree/main" target="_blank" rel="noopener noreferrer">mLRS Official Documentation</a>.
+<img src="{{ '/assets/images/novalink-77.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="500">
+
+You may now flash the ESP32 normally using `esptool` and the CLI serial port. ESP32 version is `ESP32C3`.
+
+Please download the <a href="{{ '/assets/mlrs-wireless-bridge.ino.merged.bin' | relative_url }}" download>Wireless Bridge firmware binary</a>.
+
+NOTE: Last date of compilation: October 26, 2026
+
+An example command using the above binary and assuming COM port 16 would be:
+
+`esptool --chip esp32c3 --port COM16 --baud 921600 write-flash 0x0 "mlrs-wireless-bridge.ino.merged.bin"`
+
+<img src="{{ '/assets/images/novalink-75.png' | relative_url }}"
+         alt="NOVALINK radio system"
+         width="1000">
+
+Power cycle and if `wbridge` is enabled, the wireless bridge LED should start flashing, indicating that the WiFi hotspot is starting up.
+
+It is also possible to use the <a href="https://olliw.eu/mlrs/flash/" target="_blank" rel="noopener noreferrer">mLRS Web Flasher</a>.
+
+Please select the `MODULE_ESP32C3_ELRS_TX` version.
+
+More ESP32 flashing details <a href="https://docs.espressif.com/projects/esptool/en/latest/esp32c3/esptool/flashing-firmware.html" target="_blank" rel="noopener noreferrer">HERE</a>.
